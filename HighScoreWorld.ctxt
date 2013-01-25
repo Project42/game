@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=game
 comment0.target=HighScoreWorld(Game)
-numComments=1
+comment1.params=
+comment1.target=void\ act()
+numComments=2

@@ -33,4 +33,10 @@ public class HighScoreWorld extends World {
         
         setBackground(textImage);
     }
+    
+    public void act() {
+        if (Greenfoot.mouseClicked(null)) {
+            Greenfoot.setWorld(new Menuworld());
+        }
+    }
 }
