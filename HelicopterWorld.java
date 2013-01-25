@@ -23,6 +23,8 @@ public class HelicopterWorld extends World {
     private Victim victim;
     private House house;
     private NeedsHelp needshelp;
+    private MuteButton muteButton;
+    
     GreenfootSound backgroundMusic = new GreenfootSound("background_music.mp3");
     
     public HelicopterWorld() {
@@ -120,15 +122,18 @@ public class HelicopterWorld extends World {
         health6 = new Health2();
         addObject(health6, 68, 77);
 
-        setPaintOrder(Counter.class, HP.class, Health2.class, Health.class, Helicopter.class, MenuBar.class, Wall.class, Water.class, Victim.class, MenuBar.class, House.class, SpeedPowerUp.class, RadiusPowerUp.class, NeedsHelp.class);
+        setPaintOrder(MuteButton.class, Counter.class, HP.class, Health2.class, Health.class, Helicopter.class, MenuBar.class, Wall.class, Water.class, Victim.class, MenuBar.class, House.class, SpeedPowerUp.class, RadiusPowerUp.class, NeedsHelp.class);
+
+        addObject(muteButton = new MuteButton(), 75, 75);
+        muteButton.registerSound(backgroundMusic);
     }
 
     @Override
     public void act() {
         //Check actors
         for (Actor actor : (List<Actor>)getObjects(null)) {
-            if (actor == helicopter) continue;
-            if (actor == scoreCounter) continue;
+            if (actor == helicopter || actor == scoreCounter || actor == muteButton) continue;
+            
 
             actor.setLocation(actor.getX() + 40 - helicopter.getX(), actor.getY());
         }
