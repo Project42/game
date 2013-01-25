@@ -22,10 +22,6 @@ import java.util.ArrayList;
 
 public abstract class Intervention extends Actor
 {
-    
-
-
-
     /** CODE VOOR GIF ANIMATIES */
 
 

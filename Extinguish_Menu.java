@@ -13,6 +13,7 @@ public class Extinguish_Menu extends Menu
     
     public void act() 
     {
+        // Checks if object itself has been clicked
         checkClicked(1);
     }    
 }

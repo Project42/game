@@ -14,7 +14,6 @@ public class Fire extends Calamities
     {
         setImage("fire.gif");
         setDifficultyScore();
-        Greenfoot.playSound("fire.WAV");
     }
     
     public void act()
@@ -30,7 +29,7 @@ public class Fire extends Calamities
             {
                 ControlroomWorld world = (ControlroomWorld)getWorld();
                 int NumberOfSaved = (getExpireTimer()/10);
-                int NumberOfDeaths = ((checkDifficulty() - getExpireTimer())/20);
+                int NumberOfDeaths = ((checkDifficulty() - getExpireTimer())/40);
                 
                 if (NumberOfDeaths > 0 && NumberOfSaved > 0) {
                     world.getNumberOfDeathsCounter().add(NumberOfDeaths);
@@ -40,7 +39,8 @@ public class Fire extends Calamities
                 world.removeObject(this);
                 world.removeObject(extinguisher);
                 world.getScoreCounter().add(50);
-                world.getPoliceUnits().add(2);
+                world.addConsoleMessage("De brand is geblust.");
+                world.getFirefighterUnits().add(-1);
             }
         } else {
             interventionTimer = 0;

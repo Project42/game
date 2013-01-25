@@ -32,60 +32,59 @@ public abstract class Calamities extends Actor
     {
        expireTimer = newExpireTimer;
     }
-    
-    public void setDifficultyScore() {
-        ControlroomWorld world = (ControlroomWorld)getWorld();
-        difficultyScore = world.currentScore;
-    }
-    
+     
     public int getExpireTimer() 
     {
         return expireTimer;
     }
    
+    // Sets difficulty
+    public void setDifficultyScore() {
+        ControlroomWorld world = (ControlroomWorld)getWorld();
+        difficultyScore = world.currentScore;
+    }
     /** Checks game progress and removes objects faster upon game progress */
-    
     public int checkDifficulty() {
         ControlroomWorld world = (ControlroomWorld)getWorld();
         
-        if(difficultyScore < 600) 
-        {
-            return 1200;
-        }
-        else if (difficultyScore >= 600) 
-        {
-            return 1100;
-        }
-        else if (difficultyScore >= 2000) 
+        if(difficultyScore < 300) 
         {
             return 1000;
         }
-        else if (difficultyScore >= 3000) 
+        else if (difficultyScore >= 300) 
         {
             return 900;
         }
-        else if (difficultyScore >= 4000) 
+        else if (difficultyScore >= 700) 
         {
             return 800;
         }
-        else if (difficultyScore >= 5000) 
+        else if (difficultyScore >= 1200) 
         {
             return 700;
         }
-        else if (difficultyScore >= 6000) 
+        else if (difficultyScore >= 1700) 
         {
             return 600;
         }
-        else if (difficultyScore >= 7000) 
+        else if (difficultyScore >= 2300) 
         {
             return 500;
         }
-        else if (difficultyScore >= 8000) 
+        else if (difficultyScore >= 3000) 
         {
             return 400;
         }
-        else {
+        else if (difficultyScore >= 3800) 
+        {
             return 300;
+        }
+        else if (difficultyScore >= 4700) 
+        {
+            return 200;
+        }
+        else {
+            return 100;
         }
     }
     /** CODE VOOR GIF ANIMATIES */

@@ -10,7 +10,6 @@ public class Thief extends Calamities
     CatchThief police_catchthief;
     public void addedToWorld(World world)
     {
-        // Dit moet een werkende .GIF zijn
         setImage("thief.gif");
         setDifficultyScore();
     }
@@ -24,11 +23,13 @@ public class Thief extends Calamities
         if (police_catchthief != null) {
             interventionTimer++;
             ControlroomWorld world = (ControlroomWorld)getWorld();
-            if (interventionTimer > 300) 
+            if (interventionTimer > 200) 
             {
                 world.removeObject(this);
                 world.removeObject(police_catchthief);
                 world.getScoreCounter().add(50);
+                world.addConsoleMessage("De boeven zijn gearresteerd.");
+                world.getPoliceUnits().add(-1);
             }
         } else {
             interventionTimer = 0;

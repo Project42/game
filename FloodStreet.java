@@ -10,10 +10,8 @@ public class FloodStreet extends Calamities
     ShutOff police_shutoff;
     public void addedToWorld(World world)
     {
-        // Dit moet een werkende .GIF zijn
         setImage("flood.gif");
         setDifficultyScore();
-        Greenfoot.playSound("flood.WAV");
     }
     
     public void act()
@@ -24,11 +22,11 @@ public class FloodStreet extends Calamities
         
         if (police_shutoff != null) {
             interventionTimer++;
-            if (interventionTimer > 300) 
+            if (interventionTimer > 200) 
             {
                 ControlroomWorld world = (ControlroomWorld)getWorld();
                 int NumberOfSaved = (getExpireTimer()/10);
-                int NumberOfDeaths = ((checkDifficulty() - getExpireTimer())/20);
+                int NumberOfDeaths = ((checkDifficulty() - getExpireTimer())/40);
                 if (NumberOfDeaths > 0 && NumberOfSaved > 0) {
                     world.getNumberOfDeathsCounter().add(NumberOfDeaths);
                     world.getNumberOfSavedCounter().add(NumberOfSaved);
@@ -37,6 +35,8 @@ public class FloodStreet extends Calamities
                 world.removeObject(this);
                 world.removeObject(police_shutoff);
                 world.getScoreCounter().add(50);
+                world.addConsoleMessage("De straat is afgezet.");
+                world.getPoliceUnits().add(-1);
             }
         } else {
             interventionTimer = 0;

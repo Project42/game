@@ -2,9 +2,9 @@
 comment0.params=newExpireTimer
 comment0.target=void\ setExpireTimer(int)
 comment1.params=
-comment1.target=void\ setDifficultyScore()
+comment1.target=int\ getExpireTimer()
 comment2.params=
-comment2.target=int\ getExpireTimer()
+comment2.target=void\ setDifficultyScore()
 comment3.params=
 comment3.target=int\ checkDifficulty()
 comment3.text=Checks\ game\ progress\ and\ removes\ objects\ faster\ upon\ game\ progress

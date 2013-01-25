@@ -10,12 +10,14 @@ public class Console extends Actor {
         messages = new ArrayList<String>();
     }
 
+    // Code for adding message
     public void addMessage(String message) {
         messages.add(message);
-        if (messages.size() > 13) messages.remove(0);
+        if (messages.size() > 12) messages.remove(0);
         setImage(renderToImage());
     }
 
+    // Code for making image
     private GreenfootImage renderToImage() {
         GreenfootImage image = new GreenfootImage(370, 220);
         image.setColor(Color.BLACK);
