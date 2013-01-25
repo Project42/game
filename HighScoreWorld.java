@@ -1,6 +1,4 @@
 import greenfoot.*;
-import java.awt.Color;
-import java.awt.Font;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +7,7 @@ public class HighScoreWorld extends World {
     private Game game;
     
     public HighScoreWorld(Game game) {
-        super(700, 500, 1);
+        super(600, 400, 1);
         this.game = game;
         
         List<HighScore> highScores;
@@ -19,18 +17,13 @@ public class HighScoreWorld extends World {
             highScores = new ArrayList<HighScore>();
         }
         
-        GreenfootImage textImage = new GreenfootImage("images/highScores.png");
-        textImage.setColor(Color.WHITE);
-        textImage.setFont(new Font("Arial", Font.PLAIN, 20));
-        
-        int i = 0;
+        String highScoresString = "High Scores\n";
         for (HighScore highScore : highScores) {
-            ++i;
-            textImage.drawString("#" + i, 25, 200 + i * 25);
-            textImage.drawString(highScore.getName(), 210, 200 + i * 25);
-            textImage.drawString("" + highScore.getScore(), 590, 200 + i * 25);
+            highScoresString += highScore.getName() + ": " + highScore.getScore() + "\n";
         }
         
+        GreenfootImage textImage = new GreenfootImage(600, 400);
+        textImage.drawString(highScoresString, 10, 20);
         setBackground(textImage);
     }
 }
