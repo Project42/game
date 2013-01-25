@@ -30,7 +30,7 @@ public class FloodWorld extends World {
             }
         }
 
-       addObject(new MenuBar(), 39, 75);
+       addObject(new MenuBar2(), 39, 75);
 
         for(int i = 0; i <= 80; i++) {
             for(int j = 30; j <= 50; j++) {
@@ -62,7 +62,7 @@ public class FloodWorld extends World {
 
     }
 
-    public Counter getScoreCounter() {
+    public Score getScoreCounter() {
         return scoreCounter;
     }
 

@@ -37,16 +37,19 @@ public class Ropeman extends Actor {
         //Check collision
         if (!ropemanDead) {
             Actor houselinks = getOneObjectAtOffset(1, 0, House.class);
+            Actor houserechts = getOneObjectAtOffset(-2, 0, House.class);
+            Actor houseboven = getOneObjectAtOffset(0, 3, House.class);
             if (houselinks != null && Greenfoot.isKeyDown("d")) {
                 resetRopeman();
+                ropemanDead = true;
             }
-            Actor houserechts = getOneObjectAtOffset(-2, 0, House.class);
-            if (houserechts != null && Greenfoot.isKeyDown("a")) {
+            else if (houserechts != null && Greenfoot.isKeyDown("a")) {
                 resetRopeman();
+                ropemanDead = true;
             }
-            Actor houseboven = getOneObjectAtOffset(0, 3, House.class);
-            if (houseboven != null && Greenfoot.isKeyDown("s")) {
+            else if (houseboven != null && Greenfoot.isKeyDown("s")) {
                 resetRopeman();
+                ropemanDead = true;
             } 
         }
     }    

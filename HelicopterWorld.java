@@ -10,7 +10,7 @@ public class HelicopterWorld extends World {
     private MenuBar menuBar;
     private Wall wall;
     private Direction direction;
-    private Water water;
+    private MovingWater2 water;
     private HP hp;
     private Health health1;
     private Health health2;
@@ -98,7 +98,7 @@ public class HelicopterWorld extends World {
         wall = new Wall();
         addObject(wall, -35, 40);
 
-        water = new Water();
+        water = new MovingWater2();
         addObject(water, 40, 70);
         
         hp = new HP();
@@ -122,7 +122,7 @@ public class HelicopterWorld extends World {
         health6 = new Health2();
         addObject(health6, 68, 77);
 
-        setPaintOrder(MuteButton.class, Counter.class, HP.class, Health2.class, Health.class, Helicopter.class, MenuBar.class, Wall.class, Water.class, Victim.class, MenuBar.class, House.class, SpeedPowerUp.class, RadiusPowerUp.class, NeedsHelp.class);
+        setPaintOrder(MuteButton.class, Counter.class, HP.class, Health2.class, Health.class, Helicopter.class, MenuBar.class, Wall.class, MovingWater2.class, Victim.class, MenuBar.class, House.class, SpeedPowerUp.class, RadiusPowerUp.class, NeedsHelp.class);
 
         addObject(muteButton = new MuteButton(), 75, 75);
         muteButton.registerSound(backgroundMusic);

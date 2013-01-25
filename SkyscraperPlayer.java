@@ -62,8 +62,7 @@ public class SkyscraperPlayer extends Actor {
         
         int waterOffset = 70 - ((SkyscraperWorld)getWorld()).getWaterLevel() / 2 / 10;
         if (waterOffset <= getY()) {
-             setRotation(90);
-            ((SkyscraperWorld)getWorld()).gameOver();
+             ((SkyscraperWorld)getWorld()).loseLife();
             return;
         }
 
@@ -71,7 +70,9 @@ public class SkyscraperPlayer extends Actor {
         
         Actor coin = getOneIntersectingObject(SkyscraperCoin.class);
         if (coin != null) {
-            Greenfoot.playSound("Coin.wav");
+            GreenfootSound coinSound = new GreenfootSound("Coin.wav");
+            coinSound.setVolume(75); 
+            coinSound.play();
             getWorld().removeObject(coin);
             ((SkyscraperWorld)getWorld()).getScoreCounter().add(10);
         } 
