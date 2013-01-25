@@ -205,8 +205,8 @@ public class ControlroomWorld extends World
         else if (countLifes == 1)
         {
             // Game Over
-            System.out.println("WAAAAHHHH VERLOREN!");
             removeObject(life1);
+            gameOver();
         }
     }
     
@@ -276,5 +276,9 @@ public class ControlroomWorld extends World
 
     public CatchThief_Menu getCatchThiefMenu() {
         return CatchThiefMenu;
+    }
+    
+    public void gameOver() {
+        Greenfoot.setWorld(new GameOverWorld(Game.CONTROL_ROOM_GAME, scoreCounter.getValue()));
     }
 }

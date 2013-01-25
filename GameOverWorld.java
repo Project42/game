@@ -14,12 +14,14 @@ public class GameOverWorld extends World {
     
     @Override
     public void act() {
-        if (++actsPassed == 20) {
+        if (++actsPassed == 50) {
             HighScore highScore = HighScore.askName(score);
-            try {
-                highScore.save(HighScore.defaultFilenameForGame(game));
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (highScore != null) {
+                try {
+                    highScore.save(HighScore.defaultFilenameForGame(game));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             Greenfoot.setWorld(new HighScoreWorld(game));
         }
