@@ -28,7 +28,6 @@ public class Menuworld extends World
         addObject(new Scoreboardbutton2(), 120, 80);
         addObject(new Scoreboardbutton3(), 40, 135);
         addObject(new Scoreboardbutton4(), 120, 135);
-        addObject(new Quitbutton(), 145, 150);
         
         //images of games
         addObject(new GameImage1(), 40, 50);
