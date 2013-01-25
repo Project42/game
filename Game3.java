@@ -1,7 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-public class Game3 extends Buttons
-{
-        public void act() {
+public class Game3 extends Buttons {
+    public void act() {
+        if (Greenfoot.mouseClicked(this)) {
+            Greenfoot.setWorld(new ControlroomWorld());
+        }
     }
 }

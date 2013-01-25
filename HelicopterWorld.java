@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class HelicopterWorld extends World {
     private Helicopter helicopter;
-    private Counter scoreCounter;
+    private Score scoreCounter;
     private MenuBar menuBar;
     private Wall wall;
     private Direction direction;
@@ -87,7 +87,7 @@ public class HelicopterWorld extends World {
         direction = new Direction();
         addObject(direction, 20, 68);
 
-        scoreCounter = new Counter("Score: ");
+        scoreCounter = new Score("Score: ");
         addObject(scoreCounter, 6, 73);
 
         menuBar = new MenuBar();

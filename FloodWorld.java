@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class FloodWorld extends World {
     public boolean stopped;
-    public Counter scoreCounter;
+    public Score scoreCounter;
     private Player player;
     private Coins coinCounter;
     private Overlay overlay;
@@ -41,7 +41,7 @@ public class FloodWorld extends World {
 
         addObject(player = Player.createPlayer(playerType), 40, 67);
 
-        scoreCounter = new Counter("Score: ");
+        scoreCounter = new Score("Score: ");
         addObject(scoreCounter, 6, 74);
 
         coinCounter = new Coins("Coins: ");
