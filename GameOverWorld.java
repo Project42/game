@@ -10,6 +10,7 @@ public class GameOverWorld extends World {
         super(600, 400, 1); 
         this.game = game;
         this.score = score;
+        getBackground().scale(600, 400);
     }
     
     @Override
