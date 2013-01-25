@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Jan 25 13:35:01 CET 2013
+#Fri Jan 25 13:42:46 CET 2013
 target86.type=ClassTarget
 target5.height=50
 target15.width=140
@@ -741,7 +741,7 @@ target103.editor.width=900
 dependency61.to=MenuBar
 mainWindow.y=22
 target114.y=2890
-mainWindow.x=102
+mainWindow.x=34
 target114.x=10
 class.SkyscraperCoin.image=coin.png
 target38.name=Game1
@@ -805,7 +805,7 @@ target52.width=80
 target87.width=80
 target116.name=GameOverScreen
 dependency123.type=UsesDependency
-simulation.speed=50
+simulation.speed=55
 target110.editor.y=22
 target110.editor.x=0
 dependency156.type=UsesDependency

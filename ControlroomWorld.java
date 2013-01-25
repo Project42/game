@@ -22,6 +22,7 @@ public class ControlroomWorld extends World
     private CatchThief_Menu CatchThiefMenu;
     private Console console;    
     private Lifes lifes;
+    private MuteButton muteButton;
     
     Character selectedCharacter;
     
@@ -83,6 +84,11 @@ public class ControlroomWorld extends World
         addObject(CatchThiefMenu = new CatchThief_Menu(), 40, 75);
         addObject(EvacuateMenu = new Evacuate_Menu(), 50, 75);
         addObject(lifes = new Lifes(), 68, 65);
+        
+        setPaintOrder(MuteButton.class);
+        
+        addObject(muteButton = new MuteButton(), 75, 75);
+        muteButton.registerSound(backgroundMusic);
     }
 
     /** Checks score to set difficulty over the game */
